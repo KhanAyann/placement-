@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="navbar-logo">
+            <h3>Placement Cell</h3>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for students or companies...">
+        </div>
+
+        <!-- Profile, Notifications & Messaging -->
+        <div class="profile-dropdown">
+            <i class="fas fa-bell" style="font-size: 24px; cursor: pointer;"></i>
+            <i class="fas fa-comments" style="font-size: 24px; cursor: pointer; margin-left: 20px;"></i>
+            <i class="fas fa-user-circle" style="font-size: 40px; cursor: pointer; margin-left: 20px;"></i>
+            <div class="profile-dropdown-content">
+                <a href="#">View Profile</a>
+                <a href="#">Edit Profile</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <a href="#" class="nav-link" id="home-link"><i class="fas fa-home"></i> Home</a>
+       
+        <a href="#" class="nav-link" id="new-company-link"><i class="fas fa-building"></i> Add New Company</a>
+        <a href="#" class="nav-link" id="display-company-link"><i class="fas fa-building"></i> Display Company</a>
+        <a href="index.html" class="nav-link" id="placed-students-link"><i class="fas fa-user-check"></i> Placed Students</a>
+        <a href="notplaced.html" class="nav-link" id="pending-students-link"><i class="fas fa-user-clock"></i> Pending Students</a>
+        <a href="#" class="nav-link" id="manage-companies-link"><i class="fas fa-cogs"></i> Manage Companies</a>
+        <a href="#" class="nav-link" id="update-interview-link"><i class="fas fa-edit"></i> Update Interview Status</a>
+        <a href="#" class="nav-link" id="news-link"><i class="fas fa-newspaper"></i> Create/Update News</a>
+        <a href="#" class="nav-link" id="faq-link"><i class="fas fa-question-circle"></i> Add FAQ </a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div id="home-content" class="content-section">
+            <!-- statistics -->
+            <div class="home-container">
+                <div class="chart-container">
+                    <h3>Package Distribution (Highest, Average)</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Ongoing Interviews (Monthly Trend)</h3>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+        <!-- Company Content (initially hidden) -->
+        <div id="company-content" class="content-section hidden">
+
+            <!-- Filter Section -->
+           <div class="main-content">
+             <div class="filter-size" id="filter-size"> <h2>Companies</h2>
+              <div class="filter-options">
+                <select id="locationFilter">
+                 <option value="">Location</option>
+                 <option value="USA">USA</option>
+                 <option value="India">India</option>
+                </select>
+                <select id="industryFilter">
+                 <option value="">Industry</option>
+                 <option value="Tech">Tech</option>
+                 <option value="Finance">Finance</option>
+                </select>
+               <select id="statusFilter">
+                 <option value="">Hiring Status</option>
+                 <option value="Open">Hiring</option>
+                 <option value="Closed">Not Hiring</option>
+              </select>
+               <button class="btn btn-primary filter-btn" onclick="filterCompanies()">Apply Filters</button>
+           </div>
+           </div>
+
+            <!-- <h2>Companies</h2> -->
+            <div id="companyContainer"></div>
+          </div>
+
+          
+ 
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+    <!-- Bootstrap JS for Modal -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> 
+</body>
+</html>

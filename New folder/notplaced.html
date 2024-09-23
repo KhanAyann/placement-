@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Placed Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="notplaced.css">
+</head>
+<body>
+    <div class="container my-4">
+        <h2 class="text-center">Pending Students</h2>
+
+        <!-- Filters Section -->
+        <div class="filters row my-4">
+            <div class="col-md-3">
+                <label for="departmentFilter">Department:</label>
+                <select id="departmentFilter" class="form-select">
+                    <option value="">All</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="IT">IT</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="cgpaFilter">CGPA:</label>
+                <select id="cgpaFilter" class="form-select">
+                    <option value="">All</option>
+                    <option value="7">7+</option>
+                    <option value="8">8+</option>
+                    <option value="9">9+</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="nicheFilter">Niche:</label>
+                <select id="nicheFilter" class="form-select">
+                    <option value="">All</option>
+                    <option value="AI">AI</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Data Science">Data Science</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="certificationFilter">Certifications:</label>
+                <select id="certificationFilter" class="form-select">
+                    <option value="">All</option>
+                    <option value="Python">Python</option>
+                    <option value="AWS">AWS</option>
+                    <option value="Data Science">Data Science</option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+            <button class="btn btn-success" onclick="downloadSVG()">Download SVG</button>
+        </div>
+
+        <!-- Students Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>PRN</th>
+                        <th>CGPA</th>
+                        <th>Department</th>
+                        <th>Niche</th>
+                        <th>Certifications</th>
+                        <th>Resume</th>
+                        <th>Shortlist</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Shortlisted Students Table -->
+        <h3 class="mt-5">Shortlisted Students</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>PRN</th>
+                        <th>CGPA</th>
+                        <th>Department</th>
+                        <th>Niche</th>
+                        <th>Certifications</th>
+                        <th>Resume</th>
+                    </tr>
+                </thead>
+                <tbody id="shortlistedStudentsTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="notplaced.js"></script>
+</body>
+</html>
